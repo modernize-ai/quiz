@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Streamlit cache and config
+.streamlit/
+.streamlit_cache/
+.streamlit_cache2/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Results (except structure)
+results/
+!results/.gitkeep
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Database
+*.db
+*.sqlite
