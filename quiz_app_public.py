@@ -881,12 +881,12 @@ Return ONLY valid JSON array, no markdown or extra text."""
 # ─────────────────────────────────────────────
 def main():
     st.set_page_config(
-        page_title="Public AI Quiz",
+        page_title="Dr. Veera GenAI Quiz",
         page_icon="🧠",
         layout="centered"
     )
 
-    st.title("🧠 Public AI & Tech Quiz")
+    st.title("🧠 Dr Veera GenAI Quiz")
     st.caption("Test your knowledge on AI, ML, LLMs, RAG, Embeddings & more")
 
     # ── Sidebar settings ──
