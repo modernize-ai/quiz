@@ -1360,6 +1360,480 @@ QUESTIONS = [
         "answer": "Use structured output constraints",
         "explanation": "Structured response formats reduce ambiguity and variability in model decisions."
     },
+    {
+        "topic": "Embeddings",
+        "type": "mcq",
+        "question": "Which training pair is classically associated with Word2Vec?",
+        "options": ["CBOW and Skip-gram", "Transformer and Attention", "LSTM and GRU", "RNN and CNN"],
+        "answer": "CBOW and Skip-gram",
+        "explanation": "Word2Vec is built around CBOW and Skip-gram objectives."
+    },
+    {
+        "topic": "Embeddings",
+        "type": "mcq",
+        "question": "Skip-gram with negative sampling is primarily used in which model family?",
+        "options": ["Word2Vec", "BERT", "T5", "Stable Diffusion"],
+        "answer": "Word2Vec",
+        "explanation": "Negative sampling is a standard optimization used in Word2Vec training."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which statement about BERT architecture is correct?",
+        "options": [
+            "BERT is decoder-only",
+            "BERT is encoder-decoder",
+            "BERT is encoder-only",
+            "BERT is RNN-only"
+        ],
+        "answer": "BERT is encoder-only",
+        "explanation": "BERT uses only the transformer encoder stack."
+    },
+    {
+        "topic": "Data & Preprocessing",
+        "type": "mcq",
+        "question": "Distributed representations are usually described as:",
+        "options": [
+            "Sparse, high-dimensional count vectors",
+            "Compact dense vectors capturing semantic relationships",
+            "Rule-based symbolic tables",
+            "Image-only latent maps"
+        ],
+        "answer": "Compact dense vectors capturing semantic relationships",
+        "explanation": "Distributed embeddings encode semantics in dense, lower-dimensional spaces."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "What is a practical advantage of LSTM over vanilla RNN?",
+        "options": [
+            "It cannot model long sequences",
+            "It better captures long-term dependencies",
+            "It removes all gradient issues completely",
+            "It never needs training data"
+        ],
+        "answer": "It better captures long-term dependencies",
+        "explanation": "Gating mechanisms make LSTMs more robust for longer-range sequence patterns."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which is an autoencoding language modeling objective?",
+        "options": [
+            "Predict only the next token from left context",
+            "Reconstruct clean input from a corrupted version",
+            "Generate random token permutations",
+            "Classify sentiment labels"
+        ],
+        "answer": "Reconstruct clean input from a corrupted version",
+        "explanation": "Autoencoding objectives learn to recover original content from noised/corrupted input."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Masked language modeling trains the model to:",
+        "options": [
+            "Predict masked tokens from surrounding context",
+            "Predict sentence labels only",
+            "Generate image captions only",
+            "Predict future batches"
+        ],
+        "answer": "Predict masked tokens from surrounding context",
+        "explanation": "MLM hides selected tokens and asks the model to recover them."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Autoregressive language modeling mainly learns to:",
+        "options": [
+            "Predict previous token",
+            "Predict next token given preceding context",
+            "Predict masked token positions",
+            "Predict vector dimensions"
+        ],
+        "answer": "Predict next token given preceding context",
+        "explanation": "Causal LM uses left-to-right next-token prediction."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "The original Transformer paper primarily targeted which task?",
+        "options": ["Machine translation", "Speech synthesis", "Object detection", "Database indexing"],
+        "answer": "Machine translation",
+        "explanation": "The architecture was first presented for sequence-to-sequence translation."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "In full seq2seq Transformers, encoder blocks are primarily used for:",
+        "options": ["Autoregressive generation", "Input understanding with self-attention", "Image segmentation", "Rate limiting"],
+        "answer": "Input understanding with self-attention",
+        "explanation": "Encoders build contextual representations of the source sequence."
+    },
+    {
+        "topic": "Emerging Trends",
+        "type": "mcq",
+        "question": "Which statement about modern LLM capabilities is most accurate?",
+        "options": [
+            "LLMs can only process English text",
+            "LLMs are never fine-tuned",
+            "Many LLM systems can support multimodal inputs",
+            "LLMs cannot call tools"
+        ],
+        "answer": "Many LLM systems can support multimodal inputs",
+        "explanation": "Recent models can process combinations such as text+image, and sometimes audio/video."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "A major production limitation of LLMs is often:",
+        "options": [
+            "Guaranteed explainability",
+            "High computational cost and environmental impact",
+            "Automatic self-debugging",
+            "Perfect factual accuracy"
+        ],
+        "answer": "High computational cost and environmental impact",
+        "explanation": "Large-scale training and inference are compute-intensive and resource-heavy."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "Which challenge is commonly associated with LLM decision quality?",
+        "options": ["Deterministic reasoning transparency", "Lack of explainability", "Guaranteed reproducibility", "No hallucinations"],
+        "answer": "Lack of explainability",
+        "explanation": "Interpreting why an LLM produced a specific output is often difficult."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Setting top_k = 1 makes decoding behavior most similar to:",
+        "options": ["Beam search", "Greedy decoding", "Nucleus-only sampling", "Random walk"],
+        "answer": "Greedy decoding",
+        "explanation": "With only one candidate token considered, generation approximates greedy choice."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Which statement is correct about top_p sampling?",
+        "options": [
+            "top_p always keeps a fixed number of tokens",
+            "top_p selects the smallest token set whose cumulative probability reaches p",
+            "top_p is identical to top_k",
+            "top_p disables stochasticity"
+        ],
+        "answer": "top_p selects the smallest token set whose cumulative probability reaches p",
+        "explanation": "Nucleus sampling keeps a probability mass threshold, not a fixed token count."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Why is ""temperature = 0 always gives identical output"" not strictly guaranteed in practice?",
+        "options": [
+            "Because temperature is ignored",
+            "Backend nondeterminism and tie-breaking can still vary outputs",
+            "Tokenizer changes every call",
+            "The model retrains each request"
+        ],
+        "answer": "Backend nondeterminism and tie-breaking can still vary outputs",
+        "explanation": "Low temperature reduces randomness but implementation details can still cause slight variation."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Using both top_k and top_p together can be:",
+        "options": ["Always required", "Potentially redundant", "Invalid in all APIs", "Equivalent to temperature"],
+        "answer": "Potentially redundant",
+        "explanation": "Both mechanisms constrain candidate tokens, so stacking may overlap in effect."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "When should you store long-term user identity facts in an agent app?",
+        "options": ["Only in model weights", "In external memory/store tied to session/user", "Only in system prompt text", "Nowhere, it is automatic"],
+        "answer": "In external memory/store tied to session/user",
+        "explanation": "Persistent user facts should be stored outside the base LLM and reintroduced as needed."
+    },
+    {
+        "topic": "Model Evaluation",
+        "type": "mcq",
+        "question": "What does lower perplexity generally indicate for a language model on a test set?",
+        "options": ["Worse token prediction", "Better predictive confidence and fit", "Larger context window", "Higher embedding dimension"],
+        "answer": "Better predictive confidence and fit",
+        "explanation": "Perplexity measures how surprised the model is by true tokens; lower is usually better."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Precision@k in retrieval primarily measures:",
+        "options": ["How many relevant items were found overall", "Fraction of top-k retrieved items that are relevant", "Average token length", "Retriever latency"],
+        "answer": "Fraction of top-k retrieved items that are relevant",
+        "explanation": "Precision@k focuses on relevance purity within the returned top-k results."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Recall@k in retrieval primarily measures:",
+        "options": ["How many relevant items were covered by top-k", "Average similarity score", "Embedding cost", "Response fluency"],
+        "answer": "How many relevant items were covered by top-k",
+        "explanation": "Recall@k emphasizes coverage of all relevant items within retrieved results."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "What does MRR (Mean Reciprocal Rank) reward most?",
+        "options": ["Long responses", "Relevant results appearing earlier in ranking", "Larger chunk size", "Lower temperature"],
+        "answer": "Relevant results appearing earlier in ranking",
+        "explanation": "MRR gives higher score when the first relevant hit appears near rank 1."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Why add a cross-encoder reranker after initial vector retrieval?",
+        "options": ["To reduce tokenization", "To improve ranking quality of top candidates", "To increase chunk size", "To avoid embeddings"],
+        "answer": "To improve ranking quality of top candidates",
+        "explanation": "A reranker re-scores retrieved candidates with deeper query-document interaction."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "What is the goal of MMR (Maximal Marginal Relevance) in retrieval?",
+        "options": ["Only maximize similarity", "Balance relevance and diversity", "Minimize index size", "Force lexical matches only"],
+        "answer": "Balance relevance and diversity",
+        "explanation": "MMR reduces redundant chunks while keeping strong relevance."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Query expansion in retrieval is mainly used to:",
+        "options": ["Reduce index memory", "Increase recall by adding related terms", "Reduce prompt tokens", "Disable reranking"],
+        "answer": "Increase recall by adding related terms",
+        "explanation": "Expanded queries help match relevant docs that use different wording."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Approximate nearest neighbor (ANN) search is chosen mainly for:",
+        "options": ["Perfect exactness only", "Faster retrieval with small recall trade-off", "Smaller embeddings", "Deterministic decoding"],
+        "answer": "Faster retrieval with small recall trade-off",
+        "explanation": "ANN improves speed/scale and usually trades a bit of exact recall."
+    },
+    {
+        "topic": "Embeddings",
+        "type": "mcq",
+        "question": "What is embedding drift in production?",
+        "options": ["GPU overheating", "Distribution shift that changes embedding behavior over time", "A tokenizer bug", "A CSV parsing issue"],
+        "answer": "Distribution shift that changes embedding behavior over time",
+        "explanation": "As data distribution shifts, retrieval quality can degrade unless monitored and updated."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "Why enforce JSON schema validation on tool-call arguments?",
+        "options": ["To make prompts shorter", "To prevent malformed or unsafe tool inputs", "To improve BLEU", "To increase context window"],
+        "answer": "To prevent malformed or unsafe tool inputs",
+        "explanation": "Schema validation catches invalid types/fields before tool execution."
+    },
+    {
+        "topic": "APIs & Integration",
+        "type": "mcq",
+        "question": "What is the purpose of an idempotency key for tool/API calls?",
+        "options": ["Encrypt payloads", "Prevent duplicate side effects during retries", "Reduce latency", "Increase temperature"],
+        "answer": "Prevent duplicate side effects during retries",
+        "explanation": "Idempotency makes retried requests safe for operations like payments or writes."
+    },
+    {
+        "topic": "APIs & Integration",
+        "type": "mcq",
+        "question": "A circuit breaker pattern is primarily used to:",
+        "options": ["Improve tokenizer speed", "Stop repeated calls to failing dependencies", "Increase model creativity", "Store embeddings"],
+        "answer": "Stop repeated calls to failing dependencies",
+        "explanation": "Circuit breakers fail fast during outages and protect system stability."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "What is a practical reason to configure model fallback logic?",
+        "options": ["To increase hallucinations", "To maintain service when primary model is unavailable", "To avoid all monitoring", "To remove retries"],
+        "answer": "To maintain service when primary model is unavailable",
+        "explanation": "Fallbacks improve reliability under provider outages, limits, or latency spikes."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "Why redact PII before logging prompts and responses?",
+        "options": ["To improve BLEU score", "To reduce privacy and compliance risk", "To lower perplexity", "To increase recall@k"],
+        "answer": "To reduce privacy and compliance risk",
+        "explanation": "PII redaction helps meet data-protection and governance requirements."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "A robust defense against prompt injection in tool-enabled agents is to:",
+        "options": ["Trust all user instructions", "Use strict tool allowlists and policy checks", "Disable system prompt", "Increase top_p"],
+        "answer": "Use strict tool allowlists and policy checks",
+        "explanation": "Policy gates and allowlists limit unsafe tool actions from malicious prompts."
+    },
+    {
+        "topic": "Model Evaluation",
+        "type": "mcq",
+        "question": "What is the primary purpose of a curated golden evaluation set?",
+        "options": ["Store chat history", "Track regressions consistently across model/app changes", "Increase token limits", "Replace human review forever"],
+        "answer": "Track regressions consistently across model/app changes",
+        "explanation": "Stable eval sets provide comparable measurements over time."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "Canary rollout for LLM applications means:",
+        "options": ["Send all traffic to new version immediately", "Route a small percentage of traffic first to assess risk", "Disable metrics", "Use only synthetic prompts"],
+        "answer": "Route a small percentage of traffic first to assess risk",
+        "explanation": "Canary deployment reduces blast radius before full rollout."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "Shadow deployment is best described as:",
+        "options": ["A/B test with user-visible outputs", "Run new system in parallel without affecting user responses", "Rollback to old model", "Disable retries"],
+        "answer": "Run new system in parallel without affecting user responses",
+        "explanation": "Shadow mode validates behavior/metrics safely before user-facing switch."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "What does nDCG emphasize in ranked retrieval evaluation?",
+        "options": ["Only binary relevance", "Graded relevance with position discount", "Only latency", "Only token usage"],
+        "answer": "Graded relevance with position discount",
+        "explanation": "nDCG rewards highly relevant documents ranked near the top."
+    },
+    {
+        "topic": "Emerging Trends",
+        "type": "mcq",
+        "question": "What is LoRA primarily designed to reduce during adaptation of large models?",
+        "options": ["Tokenization errors", "Number of trainable parameters", "Context window length", "Embedding dimension"],
+        "answer": "Number of trainable parameters",
+        "explanation": "LoRA fine-tunes low-rank adapters instead of updating all model weights."
+    },
+    {
+        "topic": "Emerging Trends",
+        "type": "mcq",
+        "question": "What does QLoRA combine to enable memory-efficient fine-tuning?",
+        "options": ["Sparse retrieval and reranking", "Quantized base model plus LoRA adapters", "Beam search and top_p", "RLHF and DPO"],
+        "answer": "Quantized base model plus LoRA adapters",
+        "explanation": "QLoRA uses low-bit quantization for the base model while training LoRA layers."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "What is the main deployment benefit of model quantization (e.g., INT8/INT4)?",
+        "options": ["Longer prompts automatically", "Reduced memory footprint and faster inference", "Guaranteed better accuracy", "No need for GPUs"],
+        "answer": "Reduced memory footprint and faster inference",
+        "explanation": "Lower-precision weights reduce compute and memory, often improving serving efficiency."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "In decoder-only inference, KV cache mainly helps by:",
+        "options": ["Increasing training data", "Reusing past attention states to avoid recomputation", "Improving embedding quality", "Expanding context window limit"],
+        "answer": "Reusing past attention states to avoid recomputation",
+        "explanation": "KV caching stores prior key/value tensors and speeds up autoregressive decoding."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "Speculative decoding is used primarily to:",
+        "options": ["Improve retrieval recall", "Accelerate generation with draft-and-verify strategy", "Increase model size", "Replace tokenization"],
+        "answer": "Accelerate generation with draft-and-verify strategy",
+        "explanation": "A smaller draft model proposes tokens that a larger model verifies in batches."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Mixture-of-Experts (MoE) layers improve scaling efficiency by:",
+        "options": ["Activating all experts every token", "Routing each token to a subset of experts", "Removing attention", "Using only CNN blocks"],
+        "answer": "Routing each token to a subset of experts",
+        "explanation": "Sparse expert routing increases capacity without fully dense compute per token."
+    },
+    {
+        "topic": "Emerging Trends",
+        "type": "mcq",
+        "question": "Compared with RLHF, DPO (Direct Preference Optimization) is notable because it:",
+        "options": ["Requires no preference data", "Optimizes preferences directly without RL rollouts", "Eliminates supervised fine-tuning", "Works only for vision models"],
+        "answer": "Optimizes preferences directly without RL rollouts",
+        "explanation": "DPO learns from preference pairs with a direct objective instead of full RL pipelines."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "What does a groundedness metric in RAG most directly assess?",
+        "options": ["Response speed", "Whether claims are supported by retrieved context", "Prompt length", "Embedding dimension"],
+        "answer": "Whether claims are supported by retrieved context",
+        "explanation": "Groundedness measures attribution of generated statements to source evidence."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "Citation checking in RAG is mainly used to reduce:",
+        "options": ["API latency", "Hallucinated unsupported statements", "Vector index size", "Tokenization errors"],
+        "answer": "Hallucinated unsupported statements",
+        "explanation": "Requiring source-backed answers helps prevent fabricated claims."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Reciprocal Rank Fusion (RRF) is commonly used to:",
+        "options": ["Compress embeddings", "Combine ranked lists from multiple retrievers", "Train language models", "Deduplicate prompts"],
+        "answer": "Combine ranked lists from multiple retrievers",
+        "explanation": "RRF robustly merges heterogeneous retrieval rankings (e.g., BM25 + dense)."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Applying metadata constraints before vector search is called:",
+        "options": ["Post-filtering", "Pre-filtering", "Late fusion", "Score calibration"],
+        "answer": "Pre-filtering",
+        "explanation": "Pre-filtering narrows the candidate set before similarity search is executed."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "In HNSW-style ANN indexes, increasing efSearch usually trades:",
+        "options": ["Lower recall for lower latency", "Higher recall for higher latency", "Higher cost for lower memory", "Lower precision for higher throughput"],
+        "answer": "Higher recall for higher latency",
+        "explanation": "Larger search breadth improves recall but requires more traversal work."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "Which latency metric best reflects tail-user experience in production?",
+        "options": ["Mean latency", "P95 latency", "Minimum latency", "Median token length"],
+        "answer": "P95 latency",
+        "explanation": "P95 captures near-worst-case latency that many users still experience."
+    },
+    {
+        "topic": "Production & Deployment",
+        "type": "mcq",
+        "question": "Token streaming to clients primarily improves:",
+        "options": ["Model accuracy", "Perceived responsiveness", "Embedding quality", "Retriever recall"],
+        "answer": "Perceived responsiveness",
+        "explanation": "Users see partial output sooner, reducing perceived wait time."
+    },
+    {
+        "topic": "APIs & Integration",
+        "type": "mcq",
+        "question": "Exponential backoff with jitter is recommended for retries because it:",
+        "options": ["Increases duplicate writes", "Reduces synchronized retry storms", "Eliminates rate limits", "Guarantees success on first retry"],
+        "answer": "Reduces synchronized retry storms",
+        "explanation": "Backoff plus random jitter prevents many clients from retrying simultaneously."
+    },
+    {
+        "topic": "Ethics & Safety",
+        "type": "mcq",
+        "question": "A post-generation moderation layer is primarily intended to:",
+        "options": ["Increase top_k", "Filter unsafe or policy-violating outputs", "Improve ANN recall", "Store chat memory"],
+        "answer": "Filter unsafe or policy-violating outputs",
+        "explanation": "Output moderation enforces safety policies before responses reach end users."
+    },
 ]
 
 # Expand to 100 questions by duplicating/adapting
