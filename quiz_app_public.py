@@ -1004,6 +1004,362 @@ QUESTIONS = [
         "answer": "Increase temperature",
         "explanation": "Increasing temperature can increase diversity and reduce repetitive high-probability loops."
     },
+
+    # ── LangChain & Agent Engineering (single-answer only) ──
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "In a Runnable chain where step-1 does x + 1 and step-2 returns {'result': x * 2}, what is the final output type?",
+        "options": ["Integer", "String", "Dictionary", "List"],
+        "answer": "Dictionary",
+        "explanation": "The second runnable explicitly returns a dict with key 'result'."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "For a chain with RunnableLambda(lambda x: x + 1), what input type is required at minimum?",
+        "options": ["Numeric input", "Only dictionary input", "Only string input", "Only list input"],
+        "answer": "Numeric input",
+        "explanation": "The operation x + 1 assumes a numeric-compatible value."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "Which create_agent parameter defines the shape of mutable state?",
+        "options": ["response_format", "state_schema", "model_config", "memory_schema"],
+        "answer": "state_schema",
+        "explanation": "state_schema controls the agent state structure available during execution."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "Which create_agent parameter is used for persistent storage integration?",
+        "options": ["store", "context_schema", "response_format", "tool_schema"],
+        "answer": "store",
+        "explanation": "store is used to connect persistence/backing storage patterns in agent workflows."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "If an agent answers weather questions generically instead of calling get_weather, what is the most effective first fix?",
+        "options": [
+            "Increase temperature",
+            "Improve the tool description/docstring so routing is unambiguous",
+            "Remove all tools except weather",
+            "Force every query to call a tool"
+        ],
+        "answer": "Improve the tool description/docstring so routing is unambiguous",
+        "explanation": "Better tool semantics strongly improve model tool-selection behavior."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "In many LangChain setups, what happens if a @tool function has no description/docstring?",
+        "options": [
+            "It always works without warnings",
+            "It fails because description metadata is missing",
+            "It fails because tool name must be passed separately",
+            "It fails because return type must be bool"
+        ],
+        "answer": "It fails because description metadata is missing",
+        "explanation": "Tool metadata (especially descriptions) is typically required for robust tool registration/routing."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "What is a defining ReAct-agent behavior?",
+        "options": [
+            "Single-pass answer with no iteration",
+            "Alternating reasoning steps with tool actions",
+            "Running every tool in parallel each turn",
+            "Using only retrieval and no generation"
+        ],
+        "answer": "Alternating reasoning steps with tool actions",
+        "explanation": "ReAct interleaves Thought, Action, and Observation loops."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Few-shot prompting primarily means:",
+        "options": [
+            "Changing temperature and top_p",
+            "Providing input-output examples in the prompt",
+            "Using fewer tokens",
+            "Always requesting chain-of-thought"
+        ],
+        "answer": "Providing input-output examples in the prompt",
+        "explanation": "Few-shot gives examples to demonstrate the expected pattern."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "RunnableParallel typically returns what shape?",
+        "options": ["Single scalar", "Dictionary keyed by branch names", "Tuple only", "Boolean only"],
+        "answer": "Dictionary keyed by branch names",
+        "explanation": "Each parallel branch contributes a named key in the returned dictionary."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Which factor directly impacts retrieval quality in vector search?",
+        "options": ["UI theme color", "Embedding model choice", "Screen resolution", "REST endpoint name"],
+        "answer": "Embedding model choice",
+        "explanation": "Embedding quality strongly determines semantic matching performance."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Which document-processing setting most directly influences retrieval precision/recall tradeoff?",
+        "options": ["Chunk size", "CSV delimiter", "API key name", "Model temperature"],
+        "answer": "Chunk size",
+        "explanation": "Chunking controls context granularity and retrieval match behavior."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Which retrieval setting determines how vector similarity is computed?",
+        "options": ["Similarity metric", "Prompt template", "Top_k tokenizer", "Context_schema"],
+        "answer": "Similarity metric",
+        "explanation": "Cosine/L2/dot-product choices directly affect nearest-neighbor ranking."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "temperature, top_k, and top_p mainly control what?",
+        "options": ["Prompt formatting", "Randomness/diversity of generated tokens", "Embedding dimensionality", "Model training objective"],
+        "answer": "Randomness/diversity of generated tokens",
+        "explanation": "These are decoding controls that shape sampling behavior."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "In transformers, context window refers to:",
+        "options": [
+            "Tokens generated per second",
+            "Number of training batches",
+            "Maximum tokens the model can attend to in one request",
+            "Maximum API calls per minute"
+        ],
+        "answer": "Maximum tokens the model can attend to in one request",
+        "explanation": "It is the bounded sequence length available to the model at inference time."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Why can identical prompts yield slightly different outputs from the same LLM?",
+        "options": [
+            "Model retrains after each request",
+            "Tokenizer changes each run",
+            "Decoding samples from a probability distribution",
+            "Context window doubles automatically"
+        ],
+        "answer": "Decoding samples from a probability distribution",
+        "explanation": "Non-greedy sampling introduces variability between runs."
+    },
+    {
+        "topic": "APIs & Integration",
+        "type": "mcq",
+        "question": "Which factor primarily determines inference billing in hosted LLM APIs?",
+        "options": ["Temperature only", "Total input and output tokens", "Latency and retries only", "Context window limit only"],
+        "answer": "Total input and output tokens",
+        "explanation": "Most API pricing is token-based over prompt plus completion tokens."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "If a ReAct agent keeps calling the same tool in a loop, what is the best prompt-level mitigation?",
+        "options": ["Increase temperature", "Add clear termination criteria in system instructions", "Remove tool descriptions", "Disable observations"],
+        "answer": "Add clear termination criteria in system instructions",
+        "explanation": "Explicit stop rules reduce repetitive tool-calling loops."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "What runtime guard can limit endless ReAct loops?",
+        "options": ["Increase top_k", "Reduce max_iterations", "Increase chunk size", "Disable checkpointer"],
+        "answer": "Reduce max_iterations",
+        "explanation": "A strict iteration cap prevents runaway tool loops."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "create_agent in LangChain is most accurately described as:",
+        "options": [
+            "A direct tool executor with no LLM reasoning",
+            "A graph-based agent runtime that manages messages/state",
+            "A single-call inference shortcut only",
+            "A static prompt compiler"
+        ],
+        "answer": "A graph-based agent runtime that manages messages/state",
+        "explanation": "Agent execution typically uses graph-style orchestration with message/state flow."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "Which operation is normally done at query time in RAG?",
+        "options": ["Corpus-wide chunking", "Re-embedding all source documents", "Embedding the user query", "Training a new retriever"],
+        "answer": "Embedding the user query",
+        "explanation": "At query time, the user query is embedded and used to retrieve top-k relevant chunks."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "After retrieval in RAG, the next standard step is to:",
+        "options": ["Delete old vectors", "Inject retrieved context into the LLM prompt", "Fine-tune the base model", "Reset conversation state"],
+        "answer": "Inject retrieved context into the LLM prompt",
+        "explanation": "Retrieved passages are appended to prompt context for grounded generation."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "If message history becomes too large, what is the most direct optimization?",
+        "options": ["Increase temperature", "Trim old messages", "Use more tools", "Set top_p to 1"],
+        "answer": "Trim old messages",
+        "explanation": "History pruning reduces token load, latency, and cost."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "Besides trimming, what is another common strategy to reduce conversation token load?",
+        "options": ["Summarize prior history", "Increase context window only", "Increase max_iterations", "Disable tools"],
+        "answer": "Summarize prior history",
+        "explanation": "Summaries preserve key context with fewer tokens."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "A custom state schema passed to create_agent is typically expected to be:",
+        "options": ["Only a dataclass", "Only a plain dict", "An AgentState extension or TypedDict-like schema", "A SQL table"],
+        "answer": "An AgentState extension or TypedDict-like schema",
+        "explanation": "State schemas are structured types used by the runtime for validation and access."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "How do tools usually access runtime state in modern LangChain agents?",
+        "options": ["Via ToolRuntime", "Only via environment variables", "Through tokenizer hooks", "Through response_format"],
+        "answer": "Via ToolRuntime",
+        "explanation": "ToolRuntime gives tools access to execution context and state safely."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "A hybrid retriever most commonly combines which methods?",
+        "options": ["Dense vector search and BM25", "Only dense search", "Only BM25", "NER and sentiment analysis"],
+        "answer": "Dense vector search and BM25",
+        "explanation": "Hybrid retrieval combines semantic and lexical matching, often fused with methods like RRF."
+    },
+    {
+        "topic": "RAG & Vector Search",
+        "type": "mcq",
+        "question": "What is one core responsibility of a RAG system?",
+        "options": ["Storing long-term user memory in AgentState", "Retrieving relevant documents from a knowledge base", "Replacing the LLM tokenizer", "Training a foundation model from scratch"],
+        "answer": "Retrieving relevant documents from a knowledge base",
+        "explanation": "RAG systems retrieve relevant context and feed it into generation."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "If a chatbot appears to remember user preferences across sessions, what is usually happening?",
+        "options": [
+            "The base LLM stores session memory internally",
+            "The model self-fine-tunes after each user message",
+            "External systems persist and re-inject prior context",
+            "The tokenizer caches user identity forever"
+        ],
+        "answer": "External systems persist and re-inject prior context",
+        "explanation": "Cross-session memory is typically application-managed, not native persistent memory in the base LLM call."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "If user profile facts are forgotten between turns, what is the most likely infrastructure fix?",
+        "options": ["Increase model temperature", "Configure a checkpointer", "Reduce chunk size", "Disable tools"],
+        "answer": "Configure a checkpointer",
+        "explanation": "Checkpointers persist state across interactions so facts survive between turns/sessions."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "To stabilize tool-usage patterns across runs, which change usually helps first?",
+        "options": ["Increase temperature", "Reduce temperature", "Add more unrelated tools", "Increase max tokens"],
+        "answer": "Reduce temperature",
+        "explanation": "Lower temperature reduces sampling variance and makes behavior more repeatable."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Which prompting addition best improves consistent tool routing?",
+        "options": ["No examples, only task text", "Examples demonstrating when to call tools", "Higher top_p", "Longer user message"],
+        "answer": "Examples demonstrating when to call tools",
+        "explanation": "Tool-routing examples provide concrete decision patterns the model can imitate."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "In a ReAct loop, what is the canonical order?",
+        "options": ["Action -> Thought -> Observation", "Observation -> Thought -> Action", "Thought -> Action -> Observation", "Thought -> Observation -> Action"],
+        "answer": "Thought -> Action -> Observation",
+        "explanation": "Reason about next step, take tool action, then inspect observation and iterate."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Which statement about context is most accurate?",
+        "options": [
+            "Prompt and context are identical terms",
+            "System prompts are ignored metadata",
+            "Context includes all tokens visible to the model at inference time",
+            "User messages always override system instructions"
+        ],
+        "answer": "Context includes all tokens visible to the model at inference time",
+        "explanation": "The model conditions on the full visible token sequence: system, developer, user, and tool context."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "Which create_agent parameter defines read-only runtime context shape available to execution?",
+        "options": ["context_schema", "response_format", "memory_schema", "tool_choice"],
+        "answer": "context_schema",
+        "explanation": "context_schema defines external context structure distinct from mutable state_schema."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "RunnableParallel with keys 'original' and 'length' will typically produce:",
+        "options": [
+            "Only the 'length' value",
+            "A dictionary containing both 'original' and 'length' keys",
+            "A tuple where order is undefined",
+            "A single merged string"
+        ],
+        "answer": "A dictionary containing both 'original' and 'length' keys",
+        "explanation": "Named branches are returned as keyed outputs in a dictionary object."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "For a chain x -> (x + 1) -> {'result': x * 2}, what is result when input is 3?",
+        "options": ["{'result': 6}", "{'result': 7}", "{'result': 8}", "{'result': 9}"],
+        "answer": "{'result': 8}",
+        "explanation": "Input 3 becomes 4, then 4 * 2 = 8, wrapped under the 'result' key."
+    },
+    {
+        "topic": "Agents & Tools",
+        "type": "mcq",
+        "question": "When a relevant tool is skipped, which technical validation is also important besides better description?",
+        "options": ["UI color palette", "Tool schema types/signature correctness", "Context window maximum", "Tokenizer vocabulary size"],
+        "answer": "Tool schema types/signature correctness",
+        "explanation": "Incorrect argument schema can prevent reliable tool-calling even with a good prompt."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "Which control can help stabilize tool behavior beyond lowering temperature?",
+        "options": ["Increase number of tools", "Use structured output constraints", "Increase top_p to 1", "Disable system prompt"],
+        "answer": "Use structured output constraints",
+        "explanation": "Structured response formats reduce ambiguity and variability in model decisions."
+    },
 ]
 
 # Expand to 100 questions by duplicating/adapting
