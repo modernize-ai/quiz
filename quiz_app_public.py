@@ -806,6 +806,204 @@ QUESTIONS = [
         "answer": "emergence",
         "explanation": "Emergent abilities: larger models suddenly develop unexpected capabilities (in-context learning, reasoning)."
     },
+
+    # ── Added from advanced assessment (single-answer MCQ/fill only) ──
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which statement correctly describes GPT pretraining?",
+        "options": [
+            "GPT uses encoder-only architecture with masked language modeling",
+            "GPT uses decoder-only transformer architecture trained with a causal language modeling task",
+            "GPT uses recurrent neural networks trained with next sentence prediction",
+            "GPT uses encoder-decoder architecture trained only on translation"
+        ],
+        "answer": "GPT uses decoder-only transformer architecture trained with a causal language modeling task",
+        "explanation": "GPT-style models are decoder-only and predict the next token using a causal/autoregressive objective."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which statement correctly describes BERT pretraining?",
+        "options": [
+            "BERT uses encoder-decoder architecture and causal language modeling",
+            "BERT uses decoder-only architecture and next-token prediction",
+            "BERT uses encoder-only architecture with Masked LM and Next Sentence Prediction",
+            "BERT uses RNNs with CBOW"
+        ],
+        "answer": "BERT uses encoder-only architecture with Masked LM and Next Sentence Prediction",
+        "explanation": "Original BERT uses an encoder-only transformer with MLM and NSP objectives."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Why are Transformers generally better than RNNs for long sequences?",
+        "options": [
+            "They rely on recurrent connections",
+            "They are rule-based models",
+            "They process tokens in parallel and use attention for long-range dependencies",
+            "They always have fewer parameters"
+        ],
+        "answer": "They process tokens in parallel and use attention for long-range dependencies",
+        "explanation": "Self-attention captures distant relationships directly and enables parallel computation."
+    },
+    {
+        "topic": "Embeddings",
+        "type": "mcq",
+        "question": "Which of the following is NOT a distributed semantic representation technique?",
+        "options": ["Word2Vec", "FastText", "GloVe", "Bag-of-Words count vectors"],
+        "answer": "Bag-of-Words count vectors",
+        "explanation": "Bag-of-Words is sparse and count-based, while Word2Vec/FastText/GloVe are dense distributed representations."
+    },
+    {
+        "topic": "Embeddings",
+        "type": "fill",
+        "question": "Distributed embeddings represent words or phrases as vectors based on their ___ meaning.",
+        "answer": "semantic",
+        "explanation": "Distributed representations encode semantic similarity in dense vector space."
+    },
+    {
+        "topic": "Data & Preprocessing",
+        "type": "mcq",
+        "question": "What was a key motivation for moving from sparse to distributed representations?",
+        "options": [
+            "To make vectors higher-dimensional",
+            "To compress dimensionality into compact dense vectors",
+            "To remove all neural network training",
+            "To avoid using text corpora"
+        ],
+        "answer": "To compress dimensionality into compact dense vectors",
+        "explanation": "Distributed embeddings reduce sparsity and encode richer semantics in fewer dimensions."
+    },
+    {
+        "topic": "Embeddings",
+        "type": "mcq",
+        "question": "What is one key difference between Word2Vec and BERT?",
+        "options": [
+            "Word2Vec creates contextual embeddings while BERT is static",
+            "Word2Vec and BERT both assign exactly one embedding per word in all contexts",
+            "Word2Vec gives mostly static word vectors, while BERT produces context-dependent embeddings",
+            "BERT cannot process bidirectional context"
+        ],
+        "answer": "Word2Vec gives mostly static word vectors, while BERT produces context-dependent embeddings",
+        "explanation": "BERT embeddings depend on surrounding words; Word2Vec typically gives one vector per token."
+    },
+    {
+        "topic": "Embeddings",
+        "type": "mcq",
+        "question": "For the word 'bank' (finance vs river edge), what is a limitation of traditional Word2Vec?",
+        "options": [
+            "It always creates separate vectors for each sense automatically",
+            "It assigns the same static vector, which can confuse polysemous meanings",
+            "It uses contextual embeddings by default",
+            "It ignores frequent words during training"
+        ],
+        "answer": "It assigns the same static vector, which can confuse polysemous meanings",
+        "explanation": "Standard Word2Vec does not disambiguate senses contextually at inference time."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which is a valid language modeling task?",
+        "options": ["Stable Diffusion", "Generative Adversarial Networks", "Masked Language Modeling", "K-means clustering"],
+        "answer": "Masked Language Modeling",
+        "explanation": "Common LM objectives include masked, causal/autoregressive, and autoencoding-style tasks."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "fill",
+        "question": "In autoregressive language modeling, the model learns to predict the ___ token.",
+        "answer": "next",
+        "explanation": "Causal/autoregressive training predicts each next token from previous tokens."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "fill",
+        "question": "In Masked LM, the model is trained to predict randomly ___ tokens.",
+        "answer": "masked",
+        "explanation": "MLM hides some tokens and trains the model to recover them from context."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "What major seq2seq limitation did attention directly address?",
+        "options": [
+            "Lack of GPU support",
+            "Information bottleneck from a fixed-length context vector",
+            "Inability to tokenize text",
+            "Need for labeled data"
+        ],
+        "answer": "Information bottleneck from a fixed-length context vector",
+        "explanation": "Attention lets the decoder access relevant encoder states dynamically instead of one compressed vector."
+    },
+    {
+        "topic": "Emerging Trends",
+        "type": "mcq",
+        "question": "Which concept means applying knowledge from one task to a related new task?",
+        "options": ["Attention mechanism", "Transfer learning", "Beam search", "Prompt injection"],
+        "answer": "Transfer learning",
+        "explanation": "Transfer learning reuses learned representations from one problem in another related problem."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which paper introduced attention to improve encoder-decoder NMT models?",
+        "options": [
+            "Sequence to Sequence Learning with Neural Networks",
+            "Neural Machine Translation by Joint Learning to Align and Translate",
+            "Attention Is All You Need",
+            "BERT: Pre-training of Deep Bidirectional Transformers"
+        ],
+        "answer": "Neural Machine Translation by Joint Learning to Align and Translate",
+        "explanation": "Bahdanau et al. (2014) introduced additive attention for neural machine translation."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "In the original encoder-decoder Transformer, which attention blocks are used in the decoder?",
+        "options": [
+            "Only encoder self-attention",
+            "Only masked self-attention",
+            "Masked self-attention plus cross-attention",
+            "Only cross-attention"
+        ],
+        "answer": "Masked self-attention plus cross-attention",
+        "explanation": "Decoder layers include masked self-attention followed by encoder-decoder cross-attention."
+    },
+    {
+        "topic": "LLMs & Transformers",
+        "type": "mcq",
+        "question": "Which is a real limitation of many LLM systems?",
+        "options": [
+            "They can only process English text",
+            "They are stateless by default and bounded by a fixed context window",
+            "They cannot be fine-tuned",
+            "They always provide complete explainability"
+        ],
+        "answer": "They are stateless by default and bounded by a fixed context window",
+        "explanation": "Without external memory or orchestration, LLM interactions are limited by context length and stateless calls."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "What does setting top_p = 1 generally imply during decoding?",
+        "options": [
+            "Only the most probable token is allowed",
+            "No nucleus filtering restriction is applied",
+            "The model becomes deterministic",
+            "The model uses top_k = 1 automatically"
+        ],
+        "answer": "No nucleus filtering restriction is applied",
+        "explanation": "With top_p = 1, the full probability mass is available, so nucleus sampling does not filter tokens."
+    },
+    {
+        "topic": "Prompt Engineering",
+        "type": "mcq",
+        "question": "If outputs are repetitive and stuck in loops, which change is most likely to help?",
+        "options": ["Decrease temperature", "Increase temperature", "Set top_k = 1", "Reduce max tokens"],
+        "answer": "Increase temperature",
+        "explanation": "Increasing temperature can increase diversity and reduce repetitive high-probability loops."
+    },
 ]
 
 # Expand to 100 questions by duplicating/adapting
